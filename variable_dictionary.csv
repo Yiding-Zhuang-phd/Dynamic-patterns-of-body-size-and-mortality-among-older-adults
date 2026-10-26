@@ -1,0 +1,34 @@
+﻿variable,type,definition_or_categories,used_in
+Time_years,numeric,Positive follow-up years; trajectory=last eligible visit to death/end; landmark=2020-12-31 to death/end,all survival models
+Status,integer,0=censored; 1=all-cause death,all survival models
+weight_change_cat,factor,Stable | Mild decrease | Mild increase | Substantial decrease | Substantial increase; preclassified absolute kg change,main
+waist_change_cat_abs,factor,Same five labels; preclassified absolute cm change,main
+BMI_change_perc_cat,factor,Same five labels; preclassified relative BMI percent change,main
+weight_change_perc_cat,factor,Same five labels; preclassified relative weight percent change,main
+waist_change_cat_perc,factor,Same five labels; preclassified relative waist percent change,main
+BMI_change_pattern,factor,"16 transitions: Underweight, Normal weight, Overweight, Obesity; use exact separator space → space; reference Normal weight → Normal weight",main; alternate prepared older_bmi uses Appropriate → Appropriate reference
+SEX,factor,Female | Male; Female reference,covariate; subgroups
+age,numeric,Age in years at the covariate assessment used by the corresponding analysis,covariate; age strata
+EDU_new,factor,<9 years | ≥9 years; <9 years reference,covariate
+SMOKE,ordered factor,Never smoker | Former smoker | Current smoker; ordered polynomial contrasts,covariate
+PAF,ordered factor,No exercise | Occasionally | Weekly+ | Daily; ordered polynomial contrasts,covariate
+MAR,factor,Married | Single | Widowed | Divorced; Married reference,covariate
+ALCOHOL,ordered factor,Non-drinker | Casual drinker | Frequent drinker | Daily drinker; ordered polynomial contrasts,optional MI adjustment only
+TC,numeric,Total cholesterol; retain study analysis units,covariate
+TG,numeric,Triglycerides; retain study analysis units,BMI-transition covariate only
+LDL,numeric,Low-density lipoprotein cholesterol; retain study analysis units,covariate
+HDL,numeric,High-density lipoprotein cholesterol; retain study analysis units,change/trajectory covariate only
+RSBP,numeric,Systolic blood pressure; retain study analysis units,covariate
+HB,numeric,Hemoglobin; retain study analysis units,covariate
+WCELL,numeric,White blood cell count; retain study analysis units,covariate
+AST,numeric,Aspartate aminotransferase; retain study analysis units,covariate
+SCR,numeric,Serum creatinine; retain study analysis units,covariate
+GPT,numeric,Alanine aminotransferase; retain study analysis units,covariate
+FBG,numeric,Fasting blood glucose; retain study analysis units,covariate
+TBIL,numeric,Total bilirubin; retain study analysis units,covariate
+Top_level_outcomes,character/factor,Top_Communicable | Top_NonCommunicable | Top_Injuries; preclassified causes; NA for unknown,optional cause-specific models
+Major_outcomes,character/factor,Second_Circulatory | Second_Respiratory | Second_Neoplasms | Second_Digestive | Second_Metabolic | Second_Falls; retain other non-target causes as other nonmissing labels; NA only for unknown,optional cause-specific models
+id_num,numeric integer,Anonymous ID used only for local trajectory linkage; not original participant identifier,trajectory long data and one-row survival data
+time,numeric,Nonnegative years since first eligible BMI measurement; repeated measurements restricted to prepared observation window,trajectory long data
+BMI,numeric,Positive BMI in kg/m² for each eligible visit; at least 3 visits per id_num,trajectory long data
+years_after_last,numeric,Privately prepared death-minus-LAST-examination interval in years; NA for no death date,optional 1-year/2-year lag exclusions

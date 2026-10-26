@@ -1,49 +1,38 @@
-# History files
-.Rhistory
-.Rapp.history
-
-# Session Data files
+# Local analysis data and outputs
+/data/
+/inputs/
+/private/
+/outputs/
+/results/
+/models/
+*.csv
+!variable_dictionary.csv
+*.xlsx
+*.xls
+*.sav
+*.sas7bdat
+*.dta
+*.parquet
+*.feather
+*.rds
+*.RDS
+*.rda
+*.RData
+*.Rhistory
 .RData
-.RDataTmp
-
-# User-specific files
+.Rhistory
 .Ruserdata
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
-# RStudio files
 .Rproj.user/
-
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
-
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
-
-# knitr and R markdown default cache directories
-*_cache/
-/cache/
-
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
-
-# R Environment Variables
 .Renviron
-
-# pkgdown site
-docs/
-
-# translation temp files
-po/*~
-
-# RStudio Connect folder
-rsconnect/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+# This does not remove files already tracked by Git, or past commits.
